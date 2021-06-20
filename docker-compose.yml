@@ -1,0 +1,14 @@
+version: '2.1'
+services:      
+  web:
+    build: .
+    container_name: hapi.js
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
+      - SWAGGER_HOST=${SWAGGER_HOST}
+      - JWT_SECRET=${JWT_SECRET}
